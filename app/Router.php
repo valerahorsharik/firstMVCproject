@@ -21,15 +21,21 @@ class Router {
 
         foreach ($this->routes as $uriPattern => $path) {
             if (preg_match("~$uriPattern~", $uri)) {
-                $internalRoute = preg_replace("~$uriPattern~",$path ,$uri );
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 $segments = explode('/', $internalRoute);
                 $controllerName = ucfirst(array_shift($segments) . "Controller");
                 $actionName = "action" . ucfirst(array_shift($segments));
-                echo "<br/><pre>";
-                echo "Имя контроллера = " . $controllerName;
-                echo "<br/>Имя метода = " . $actionName;
+                $params = $segments;
+                break;
             }
         }
+        $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
+        if (file_exists($controllerFile)) {
+            include_once $controllerFile;
+        }
+        
+         $controllerObject = new $controllerName();
+         $controllerObject->$actionName();
     }
 
 }
