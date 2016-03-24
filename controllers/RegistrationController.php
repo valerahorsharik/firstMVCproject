@@ -1,6 +1,9 @@
 <?php
-
+require_once ROOT . '/models/Registration.php';
 echo "Registration Controller";
 class RegistrationController {
-    //put your code here
+    
+    public function actionAdd() {
+        
+    }
 }
