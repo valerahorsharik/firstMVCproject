@@ -1,6 +1,11 @@
 <?php
 require_once ROOT . '/models/Feedback.php';
-echo "Feedback Controller";
+echo "Feedback Controller ";
 class FeedbackController {
-    //put your code here
+     public function actionAdd() {
+        Feedback::addFeedback();
+    }
+    public function actionShow() {
+        Feedback::showFeedBacks();
+    }
 }
