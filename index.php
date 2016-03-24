@@ -1,2 +1,6 @@
 <?php
-echo "Hello world";
+
+define('ROOT',dirname(__FILE__));
+require_once (ROOT . '/app/Router.php');
+
+$app = new Router();
