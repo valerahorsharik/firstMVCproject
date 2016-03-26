@@ -1,8 +1,13 @@
 <?php
+
 require_once ROOT . '/models/Weather.php';
-echo "Weather Controller ";
+
 class WeatherController {
-     public function actionZaporizhia() {
+
+    public function actionZaporizhia() {
         Weather::weatherShow();
+        $currentPage = "/weather/index.php";
+        require_once ROOT . '/views/index.php';
     }
+
 }
