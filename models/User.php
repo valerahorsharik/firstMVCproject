@@ -23,7 +23,7 @@ class User {
         if (isset($_SESSION['userId'])){
             return $_SESSION['userId'];
         }
-        header('Location: /mvc/registration');
+        header('Location: /mvc/login');
         
     }
 
