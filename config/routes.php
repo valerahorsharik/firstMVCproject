@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'login'=>'registration/login',
-    'registration' => 'registration/show',
+    'login'=>'user/login',
+    'registration' => 'user/registration',
     'weather' => 'weather/zaporizhia',
     'feedback/add' => 'feedback/add',
     'feedback' => 'feedback/show',

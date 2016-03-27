@@ -1,6 +1,6 @@
 <?php
 
-class Weather {
+ class Weather {
 
     public static function weatherShow() {
         
