@@ -2,6 +2,7 @@
 
 require_once ROOT . '/models/Feedback.php';
 require_once ROOT . '/models/User.php';
+
 class FeedbackController {
 
     public function actionAdd() {
@@ -12,9 +13,10 @@ class FeedbackController {
 
     public function actionShow() {
         User::checkAuth();
-        Feedback::showFeedBacks();
+        $feedbacks = array();
+        $feedbacks = Feedback::showFeedBacks();
         $currentPage = "/feedback/index.php";
-       require_once ROOT . '/views/index.php';
+        require_once ROOT . '/views/index.php';
     }
 
 }
