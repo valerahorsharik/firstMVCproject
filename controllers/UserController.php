@@ -30,6 +30,9 @@ class UserController {
                 header('Location:/mvc/');
             }
         }
+        if (!User::isGuest()) {
+            header('Location:/mvc/');
+        }
         $currentPage = "/user/login.php";
         require_once ROOT . '/views/index.php';
     }
@@ -42,6 +45,8 @@ class UserController {
         $name = '';
         $email = '';
         $password = '';
+        
+
         $result = false;
         $errors = false;
 
@@ -69,6 +74,9 @@ class UserController {
                 User::addUser($name, $email, $password);
                 header('Location:/mvc/');
             }
+        }
+        if (!User::isGuest()) {
+            header('Location:/mvc/');
         }
         $currentPage = "/user/registration.php";
         require_once ROOT . '/views/index.php';
