@@ -7,6 +7,7 @@
     </p>
     <small>
         <?php echo $feedback['date']; ?>
+        <?php echo $feedback['author']; ?>
     </small>
 <?php endforeach; ?>   
     
