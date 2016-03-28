@@ -14,17 +14,26 @@ class User {
     }
 
     public static function auth($userId) {
-        session_start();
         $_SESSION['userId'] = $userId;
-        
     }
+
     public static function checkAuth() {
-        session_start();
-        if (isset($_SESSION['userId'])){
+        if (isset($_SESSION['userId'])) {
             return $_SESSION['userId'];
         }
         header('Location: /mvc/login');
-        
+    }
+
+    public static function isGuest() {
+        if (isset($_SESSION['userId'])) {
+            return false;
+        }
+        return true;
+    }
+
+    public static function logout() {
+        unset($_SESSION['userId']);
+        header('Location: /mvc/');
     }
 
     public static function checkUserData($email, $password) {

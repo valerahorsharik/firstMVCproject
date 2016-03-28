@@ -34,6 +34,10 @@ class UserController {
         require_once ROOT . '/views/index.php';
     }
 
+    public function actionLogout() {
+        User::logout();
+    }
+
     public function actionRegistration() {
         $name = '';
         $email = '';
