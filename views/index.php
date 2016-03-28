@@ -32,12 +32,18 @@
                 </div>
                 <div class="collapse navbar-collapse ">
                     <ul class="nav navbar-nav pull-right">
+
+
+
+<?php if (User::isGuest()): ?>
                         <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/login') echo 'class="active"'; ?>><a href="/mvc/login">Log-in</a></li>
                         <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/registration') echo 'class="active"'; ?>><a href="/mvc/registration">Registration</a></li>
+<?php else: ?>                        
+                        <li><a href="/mvc/logout">Exit</a></li>
+<?php endif; ?>
                         <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/weather') echo 'class="active"'; ?>><a href="/mvc/weather">Weather</a></li>
                         <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/feedback/add') echo 'class="active"'; ?>><a href="/mvc/feedback/add">Feedback</a></li>
                         <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/feedback' || $_SERVER['REQUEST_URI'] == '/mvc/') echo 'class="active"'; ?>><a href="/mvc/feedback">Reviews</a></li>
-
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
