@@ -36,6 +36,21 @@ class User {
         header('Location: /mvc/');
     }
 
+    public static function getUserById($id) {
+        $user = array();
+        $mysqli = mysqli_connect(HOST, USER, PASS, DB);
+        $result = mysqli_query($mysqli, "SELECT * FROM user WHERE id = $id");
+        mysqli_close($mysqli);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $user['id'] = $row['id'];
+            $user['email'] = $row['email'];
+            $user['name'] = $row['name'];
+          //  $user['gender'] = $row['gender'];
+          //  $user['bday'] = $row['bday'];
+        }
+        return $user;
+    }
+
     public static function checkUserData($email, $password) {
         $mysqli = mysqli_connect(HOST, USER, PASS, DB);
         $result = mysqli_query($mysqli, "SELECT * FROM user 
