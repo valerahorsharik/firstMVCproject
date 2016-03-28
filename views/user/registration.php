@@ -1,6 +1,6 @@
 
 <div class="text-center">
-   
+
     <h2>Registration</h2>
     <?php if (isset($errors) && is_array($errors)): ?>
         <?php foreach ($errors as $error): ?>
@@ -25,6 +25,37 @@
         <label class="control-label col-xs-5" for="inputPassword">Password:</label>
         <div class="col-xs-3">
             <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-4">Дата рождения:</label>
+        <div class="col-xs-2">
+            <select class="form-control">
+                <option>Дата</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <select class="form-control">
+                <option>Месяц</option>
+            </select>
+        </div>
+        <div class="col-xs-2">
+            <select class="form-control">
+                <option>Год</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-5">Пол:</label>
+        <div class="col-xs-1">
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="male"> Male
+            </label>
+        </div>
+        <div class="col-xs-1">
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="female"> Female
+            </label>
         </div>
     </div>
     <br />
