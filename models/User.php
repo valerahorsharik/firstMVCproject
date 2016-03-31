@@ -21,7 +21,7 @@ class User {
         if (isset($_SESSION['userId'])) {
             return $_SESSION['userId'];
         }
-        header('Location: /mvc/login');
+        header('Location: /login');
     }
 
     public static function isGuest() {
@@ -33,7 +33,7 @@ class User {
 
     public static function logout() {
         unset($_SESSION['userId']);
-        header('Location: /mvc/');
+        header('Location: /');
     }
 
     public static function getUserById($id) {
@@ -65,7 +65,7 @@ class User {
     }
 
     public static function checkName($name) {
-        if (strlen($name) >= 6) {
+        if (strlen($name) >= 4) {
             return true;
         }
         return false;

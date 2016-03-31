@@ -38,7 +38,7 @@ class Feedback {
     }
 
     public static function checkName($name) {
-        if (strlen($name) >= 6) {
+        if (strlen($name) >= 4) {
             return true;
         }
         return false;
