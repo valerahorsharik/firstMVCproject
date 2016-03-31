@@ -33,7 +33,7 @@ class UserController {
         if (!User::isGuest()) {
             header('Location:/mvc/');
         }
-        $currentPage = "/user/login.php";
+        $currentPage = "/login.php";
         require_once ROOT . '/views/index.php';
     }
 
@@ -59,7 +59,7 @@ class UserController {
 
 
             if (!User::checkName($name)) {
-                $errors[] = "-Name must contain at least 6 characters.";
+                $errors[] = "-Name must contain at least 4 characters.";
             }
             if (!User::checkEmail($email)) {
                 $errors[] = "-Not a valid email.";
@@ -72,11 +72,11 @@ class UserController {
             }
             if (!$errors) {
                 User::addUser($name, $email, $password);
-                header('Location:/mvc/');
+                header('Location:/');
             }
         }
         if (!User::isGuest()) {
-            header('Location:/mvc/');
+            header('Location:/');
         }
         $currentPage = "/user/registration.php";
         require_once ROOT . '/views/index.php';

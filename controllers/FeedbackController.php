@@ -19,16 +19,16 @@ class FeedbackController {
             $email = $user['email'];
         }
         if (isset($_POST['add_feedback'])) {
-            $author = $_POST['author'];
+            $author = ucfirst($_POST['author']);
             $email = $_POST['email'];
-            $header = $_POST['header'];
-            $feedback = $_POST['feedback'];
+            $header = ucfirst($_POST['header']);
+            $feedback = htmlspecialchars(ucfirst($_POST['feedback']));
             $captcha = $_POST['captcha'];
             if (!Feedback::checkEmail($email)) {
                 $errors[] = "-Not a valid email.";
             }
             if (!Feedback::checkName($author)) {
-                $errors[] = "-Name must contain at least 6 characters.";
+                $errors[] = "-Name must contain at least 4 characters.";
             }
             if (!Feedback::checkHeader($header)) {
                 $errors[] = "-Title must contain at least 3 characters.";
@@ -42,9 +42,9 @@ class FeedbackController {
             if (!$errors) {
                 Feedback::addFeedback($author, $email, $header, $feedback);
                 if (!User::isGuest()) {
-                    header('Location:/mvc/');
+                    header('Location:/');
                 } else {
-                    header('Location:/mvc/feedback/add');
+                    header('Location:/feedback/add');
                 }
             }
         }
