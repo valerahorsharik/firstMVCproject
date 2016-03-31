@@ -27,11 +27,11 @@ class UserController {
 
             if (!$errors) {
                 User::auth($userId);
-                header('Location:/mvc/');
+                header('Location:/');
             }
         }
         if (!User::isGuest()) {
-            header('Location:/mvc/');
+            header('Location:/');
         }
         $currentPage = "/user/login.php";
         require_once ROOT . '/views/index.php';
