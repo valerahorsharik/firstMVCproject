@@ -21,7 +21,7 @@ class UserController {
             }
 
             $userId = User::checkUserData($email, $password);
-            if ($userId == false) {
+            if (User::checkPassword($password) && $userId == false) {
                 $errors[] = "-No such user.";
             }
 
@@ -33,7 +33,7 @@ class UserController {
         if (!User::isGuest()) {
             header('Location:/mvc/');
         }
-        $currentPage = "/login.php";
+        $currentPage = "/user/login.php";
         require_once ROOT . '/views/index.php';
     }
 

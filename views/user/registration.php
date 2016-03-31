@@ -27,7 +27,6 @@
             <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
         </div>
     </div>
-    
     <br />
     <div class="form-group">
         <div class="col-xs-offset-5 col-xs-6">
