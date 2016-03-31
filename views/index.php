@@ -7,9 +7,9 @@
         <title>Test Work</title>
 
         <!-- Bootstrap -->
-        <link href="/mvc/tmp/css/bootstrap.css" rel="stylesheet">
-        <link href="/mvc/tmp/css/bootstrap-theme.css" rel="stylesheet">
-        <link href="/mvc/tmp/css/style.css" rel="stylesheet">
+        <link href="/tmp/css/bootstrap.css" rel="stylesheet">
+        <link href="/tmp/css/bootstrap-theme.css" rel="stylesheet">
+        <link href="/tmp/css/style.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,14 +36,14 @@
 
 
 <?php if (User::isGuest()): ?>
-                        <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/login') echo 'class="active"'; ?>><a href="/mvc/login">Log-in</a></li>
-                        <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/registration') echo 'class="active"'; ?>><a href="/mvc/registration">Registration</a></li>
+                        <li <?php if ($_SERVER['REQUEST_URI'] == '/login') echo 'class="active"'; ?>><a href="/login">Log-in</a></li>
+                        <li <?php if ($_SERVER['REQUEST_URI'] == '/registration') echo 'class="active"'; ?>><a href="/registration">Registration</a></li>
 <?php else: ?>                        
-                        <li><a href="/mvc/logout">Exit</a></li>
+                        <li><a href="/logout">Exit</a></li>
 <?php endif; ?>
-                        <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/weather') echo 'class="active"'; ?>><a href="/mvc/weather">Weather</a></li>
-                        <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/feedback/add') echo 'class="active"'; ?>><a href="/mvc/feedback/add">Feedback</a></li>
-                        <li <?php if ($_SERVER['REQUEST_URI'] == '/mvc/feedback' || $_SERVER['REQUEST_URI'] == '/mvc/') echo 'class="active"'; ?>><a href="/mvc/feedback">Reviews</a></li>
+                        <li <?php if ($_SERVER['REQUEST_URI'] == '/weather') echo 'class="active"'; ?>><a href="/weather">Weather</a></li>
+                        <li <?php if ($_SERVER['REQUEST_URI'] == '/feedback/add') echo 'class="active"'; ?>><a href="/feedback/add">Feedback</a></li>
+                        <li <?php if ($_SERVER['REQUEST_URI'] == '/feedback' || $_SERVER['REQUEST_URI'] == '/') echo 'class="active"'; ?>><a href="/feedback">Reviews</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
