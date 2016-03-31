@@ -14,7 +14,7 @@
     <label for="content" >Feedback: </label>
     <input type="text" name="feedback" id="feedback" value="<?php echo $feedback; ?>" placeholder="Content" required><br/>
     <label for="captcha" >Captcha: </label>
-    <img src="/mvc/app/captcha.php" />
+    <img src="/app/captcha.php" />
     <input  type="text" name="captcha" id="captcha" />	<br/>
     <input type="submit" name="add_feedback" value="Send feedback">
 </form>
