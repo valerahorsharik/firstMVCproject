@@ -1,7 +1,7 @@
 <?php
 
-require_once ROOT . '/models/Weather.php';
-require_once ROOT . '/models/User.php';
+//require_once ROOT . '/models/Weather.php';
+//require_once ROOT . '/models/User.php';
 
 class WeatherController {
 
